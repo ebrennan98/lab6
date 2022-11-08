@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 export class Create extends React.Component {
 
@@ -25,6 +26,18 @@ export class Create extends React.Component {
             cover:'',
             author:''
         })
+
+const book = {
+    title:this.state.title,
+    title:this.state.cover,
+    title:this.state.author
+}
+
+axios.post('http://localhost:4000/api/books',book)
+.then()
+.catch();
+
+       
     }
 
     onChangeBookTitle(e){
